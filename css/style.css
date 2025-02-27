@@ -8643,6 +8643,12 @@ a.portfolio-5-link:hover .portfolio-5-title span{
     line-height: 1.5;
     letter-spacing: normal;
     color: var(--color-gray-1);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .post-prev-title{
     padding-top: 40px;
