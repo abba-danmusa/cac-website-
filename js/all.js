@@ -57,15 +57,15 @@
      Platform detect
      --------------------------------------------- */
     
-    var mobileTest;
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        mobileTest = true;
-        $("html").addClass("mobile");
-    }
-    else {
-        mobileTest = false;
-        $("html").addClass("no-mobile");
-    }    
+    // var mobileTest;
+    // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    //     mobileTest = true;
+    //     $("html").addClass("mobile");
+    // }
+    // else {
+    //     mobileTest = false;
+    //     $("html").addClass("no-mobile");
+    // }    
     var mozillaTest;
     if (/mozilla/.test(navigator.userAgent)) {
         mozillaTest = true;
