@@ -3007,33 +3007,37 @@ a.bg-video-button-pause{
     left: 0;
 }
 
-
 /* ==============================
-   Custom appear animation
-   ============================== */
-  
+    Custom appear animation
+    ============================== */
+
 /*
  * Splitting JS chars animation
  */
 
-.appear-animate .charsAnimIn .char{
+ .appear-animate .charsAnimIn .char {
     opacity: 0;
     transform: translateY(.5em) rotate(7deg);
     transform-origin: 0 50%;
     transition: transform .62s var(--ease-out-short), opacity .62s var(--ease-default);
-    transition-delay: calc( 0.027s * var(--char-index) );
+    transition-delay: calc(0.027s * var(--char-index));
 }
-html:not(.mobile) .appear-animate .charsAnimIn .char{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) { /* Desktop styles */
+    .appear-animate .charsAnimIn .char {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .charsAnimIn .char{
+
+@media print {
+    .appear-animate .charsAnimIn .char {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .charsAnimIn.animated .char,
-.mobile .charsAnimIn .char{
+.mobile .charsAnimIn .char {
     opacity: 1;
     transform: none;
 }
@@ -3042,23 +3046,28 @@ html:not(.mobile) .appear-animate .charsAnimIn .char{
  * Splitting JS chars animation 1
  */
 
-.appear-animate .charsAnimIn-1 .char{
+.appear-animate .charsAnimIn-1 .char {
     opacity: 0;
     transform: translateX(.01em) translateY(.27em) translateZ(0) rotate(0.0003deg);
     transition: transform 1s var(--ease-out-short), opacity 1s var(--ease-default);
-    transition-delay: calc( 0.037s * var(--char-index) );
+    transition-delay: calc(0.037s * var(--char-index));
 }
-html:not(.mobile) .appear-animate .charsAnimIn-1 .char{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .charsAnimIn-1 .char {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .charsAnimIn-1 .char{
+
+@media print {
+    .appear-animate .charsAnimIn-1 .char {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .charsAnimIn-1.animated .char,
-.mobile .charsAnimIn-1 .char{
+.mobile .charsAnimIn-1 .char {
     opacity: 1;
     transform: none;
 }
@@ -3067,23 +3076,28 @@ html:not(.mobile) .appear-animate .charsAnimIn-1 .char{
  * Splitting JS chars animation 2
  */
 
-.appear-animate .charsAnimIn-2 .char{
+.appear-animate .charsAnimIn-2 .char {
     opacity: 0;
     transform: translateY(0.2em) translateZ(0) rotate(5deg);
     transition: transform 0.5s var(--ease-out-short), opacity 1s var(--ease-default);
-    transition-delay: calc( 0.0427s * var(--char-index) );
+    transition-delay: calc(0.0427s * var(--char-index));
 }
-html:not(.mobile) .appear-animate .charsAnimIn-2 .char{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .charsAnimIn-2 .char {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .charsAnimIn-2 .char{
+
+@media print {
+    .appear-animate .charsAnimIn-2 .char {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .charsAnimIn-2.animated .char,
-.mobile .charsAnimIn-2 .char{
+.mobile .charsAnimIn-2 .char {
     opacity: 1;
     transform: none;
 }
@@ -3092,24 +3106,29 @@ html:not(.mobile) .appear-animate .charsAnimIn-2 .char{
  * Splitting JS chars animation long
  */
 
-.appear-animate .charsAnimInLong .char{
+.appear-animate .charsAnimInLong .char {
     opacity: 0;
     transform: translateX(.5em);
     transform-origin: 0 50%;
     transition: transform .85s var(--ease-out-short), opacity .62s var(--ease-default);
-    transition-delay: calc( 0.03s * var(--char-index) );
+    transition-delay: calc(0.03s * var(--char-index));
 }
-html:not(.mobile) .appear-animate .charsAnimInLong .char{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .charsAnimInLong .char {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .charsAnimInLong .char{
+
+@media print {
+    .appear-animate .charsAnimInLong .char {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .charsAnimInLong.animated .char,
-.mobile .charsAnimInLong .char{
+.mobile .charsAnimInLong .char {
     opacity: 1;
     transform: none;
 }
@@ -3118,24 +3137,29 @@ html:not(.mobile) .appear-animate .charsAnimInLong .char{
  * Splitting JS chars animation long 1
  */
 
-.appear-animate .charsAnimInLong-1 .char{
+.appear-animate .charsAnimInLong-1 .char {
     opacity: 0;
     transform: translateX(.275em);
     transform-origin: 0 50%;
     transition: transform 1s var(--ease-out-short), opacity .62s var(--ease-default);
-    transition-delay: calc( 0.039s * var(--char-index) );
+    transition-delay: calc(0.039s * var(--char-index));
 }
-html:not(.mobile) .appear-animate .charsAnimInLong-1 .char{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .charsAnimInLong-1 .char {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .charsAnimInLong-1 .char{
+
+@media print {
+    .appear-animate .charsAnimInLong-1 .char {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .charsAnimInLong-1.animated .char,
-.mobile .charsAnimInLong-1 .char{
+.mobile .charsAnimInLong-1 .char {
     opacity: 1;
     transform: none;
 }
@@ -3144,24 +3168,29 @@ html:not(.mobile) .appear-animate .charsAnimInLong-1 .char{
  * Splitting JS words animation
  */
 
-.appear-animate .wordsAnimIn .word{
+.appear-animate .wordsAnimIn .word {
     opacity: 0;
     transform: translateY(1em) scale(.75) skew(-5deg) rotate(7deg);
     transform-origin: 0 50%;
     transition: transform 0.5s var(--ease-out-short), opacity 0.5s var(--ease-out-short);
-    transition-delay: calc( 0.05s * var(--word-index) );
+    transition-delay: calc(0.05s * var(--word-index));
 }
-html:not(.mobile) .appear-animate .wordsAnimIn .word{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .wordsAnimIn .word {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .wordsAnimIn .word{
+
+@media print {
+    .appear-animate .wordsAnimIn .word {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .wordsAnimIn.animated .word,
-.mobile .wordsAnimIn .word{
+.mobile .wordsAnimIn .word {
     opacity: 1;
     transform: none;
 }
@@ -3170,26 +3199,31 @@ html:not(.mobile) .appear-animate .wordsAnimIn .word{
  * Splitting JS lines animation
  */
 
-.appear-animate .linesAnimIn .word{
+.appear-animate .linesAnimIn .word {
     opacity: 0;
-    backface-visibility: hidden;   
+    backface-visibility: hidden;
     transform: translateY(39px) translateZ(0) scale(1.0) rotate(0.02deg);
     transform-origin: 0 50%;
     transition: transform 1s cubic-bezier(0, 0.55, 0.45, 1), opacity 1s cubic-bezier(0, 0.55, 0.45, 1);
-    transition-delay: calc( 0.05s * var(--line-index) );
+    transition-delay: calc(0.05s * var(--line-index));
 }
-html:not(.mobile) .appear-animate .linesAnimIn .word{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .linesAnimIn .word {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .linesAnimIn .word{
+
+@media print {
+    .appear-animate .linesAnimIn .word {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .linesAnimIn.animated .word,
-.mobile .linesAnimIn .word{
-    opacity: 1;   
+.mobile .linesAnimIn .word {
+    opacity: 1;
     transform: none;
 }
 
@@ -3197,26 +3231,31 @@ html:not(.mobile) .appear-animate .linesAnimIn .word{
  * Splitting JS lines animation long
  */
 
-.appear-animate .linesAnimInLong .word{
+.appear-animate .linesAnimInLong .word {
     opacity: 0;
-    backface-visibility: hidden;   
+    backface-visibility: hidden;
     transform: translateY(39px) translateZ(0) scale(1.0) rotate(0.02deg);
     transform-origin: 0 50%;
     transition: transform 1s cubic-bezier(0, 0.55, 0.45, 1), opacity 1s cubic-bezier(0, 0.55, 0.45, 1);
-    transition-delay: calc( 0.1s * var(--line-index) );
+    transition-delay: calc(0.1s * var(--line-index));
 }
-html:not(.mobile) .appear-animate .linesAnimInLong .word{
-    will-change: opacity, transform;
+
+@media (min-width: 768px) {
+    .appear-animate .linesAnimInLong .word {
+        will-change: opacity, transform;
+    }
 }
-@media print{
-    .appear-animate .linesAnimInLong .word{
+
+@media print {
+    .appear-animate .linesAnimInLong .word {
         opacity: 1 !important;
         transform: none !important;
     }
 }
+
 .linesAnimInLong.animated .word,
-.mobile .linesAnimInLong .word{
-    opacity: 1;   
+.mobile .linesAnimInLong .word {
+    opacity: 1;
     transform: none;
 }
 
@@ -3225,256 +3264,305 @@ html:not(.mobile) .appear-animate .linesAnimInLong .word{
  */
 
 :root {
-	--animate-duration: 1s;
-	--animate-delay: 1s;
-	--animate-repeat: 1
+    --animate-duration:
+    1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1
 }
+
 .animated {
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-duration: var(--animate-duration);
-	animation-duration: var(--animate-duration);
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
 }
 
 .wow,
 .wow-menubar,
-.wow-p{
-    opacity: 0.001;  
+.wow-p {
+    opacity: 0; /* Changed to 0 */
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;    
+    backface-visibility: hidden;
     -webkit-transform: translateZ(0);
-    transform: translateZ(0);  
+    transform: translateZ(0);
 }
-html:not(.mobile) .wow, 
-html:not(.mobile) .wow-menubar, 
-html:not(.mobile) .wow-p{
-    /*will-change: opacity, transform;*/
+
+@media (min-width: 768px) {
+    .wow,
+    .wow-menubar,
+    .wow-p {
+        /* will-change: opacity, transform; */ /* Remove or use as needed */
+    }
 }
-.appear-animate .wow.scaleOutIn{
+
+.appear-animate .wow.scaleOutIn {
     opacity: 1;
     transform: scale(1.2);
 }
+
 .appear-animate .wow.animated,
 .appear-animate .wow.scaleOutIn.animated,
 .appear-animate .wow-p.amimated,
 .appear-animate .wow-menubar.animated,
 .mobile .appear-animate .wow,
 .mobile .appear-animate .wow-menubar,
-.mobile .appear-animate .wow-p{
+.mobile .appear-animate .wow-p {
     opacity: 1;
     transform: scale(1.0);
 }
-@media print{
+
+@media print {
     .wow,
     .wow.scaleOutIn,
     .wow-menubar,
-    .wow-p{
+    .wow-p {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
     }
 }
+
 @keyframes fadeIn {
-	0% {
-		opacity: 0
-	}
+    0% {
+        opacity: 0
+    }
 
-	to {
-		opacity: 1
-	}
+    to {
+        opacity: 1
+    }
 }
+
 .fadeIn {
-	animation-name: fadeIn
+    animation-name: fadeIn
 }
 
-@keyframes fadeInDown{
-    0%{
+@keyframes fadeInDown {
+    0% {
         opacity: 0;
-        transform: translate3d(0,-37px,0)
+        transform: translate3d(0, -37px, 0)
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInDown{
+
+.fadeInDown {
     animation-name: fadeInDown
 }
-@keyframes fadeInUp{
-    0%{
+
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
-        transform: translate3d(0,37px,0);
+        transform: translate3d(0, 37px, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInUp{
+
+.fadeInUp {
     animation-name: fadeInUp;
 }
-@keyframes fadeInLeft{
-    0%{
+
+@keyframes fadeInLeft {
+    0% {
         opacity: 0;
-        transform: translate3d(37px,0,0);
+        transform: translate3d(37px, 0, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInLeft{
+
+.fadeInLeft {
     animation-name: fadeInLeft;
 }
-@keyframes fadeInRight{
-    0%{
+
+@keyframes fadeInRight {
+    0% {
         opacity: 0;
-        transform: translate3d(-37px,0,0);
+        transform: translate3d(-37px, 0, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInRight{
+
+.fadeInRight {
     animation-name: fadeInRight;
 }
-@keyframes fadeInDownShort{
-    0%{
+
+@keyframes fadeInDownShort {
+    0% {
         opacity: 0;
-        transform: translate3d(0,-12px,0)
+        transform: translate3d(0, -12px, 0)
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInDownShort{
+
+.fadeInDownShort {
     animation-name: fadeInDownShort
 }
-@keyframes fadeInUpShort{
-    0%{
+
+@keyframes fadeInUpShort {
+    0% {
         opacity: 0;
-        transform: translate3d(0,12px,0);
+        transform: translate3d(0, 12px, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInUpShort{
+
+.fadeInUpShort {
     animation-name: fadeInUpShort;
 }
-@keyframes fadeInLeftShort{
-    0%{
+
+@keyframes fadeInLeftShort {
+    0% {
         opacity: 0;
-        transform: translate3d(12px,0,0);
+        transform: translate3d(12px, 0, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInLeftShort{
+
+.fadeInLeftShort {
     animation-name: fadeInLeftShort;
 }
-@keyframes fadeInRightShort{
-    0%{
+
+@keyframes fadeInRightShort {
+    0% {
         opacity: 0;
-        transform: translate3d(-12px,0,0);
+        transform: translate3d(-12px, 0, 0);
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-.fadeInRightShort{
+
+.fadeInRightShort {
     animation-name: fadeInRightShort;
 }
-@keyframes scalexIn{
-    0%{
+
+@keyframes scalexIn {
+    0% {
         opacity: 0;
         transform: scaleX(0);
-        transform-origin: left center;        
+        transform-origin: left center;
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scaleX(1);
         transform-origin: left center;
     }
 }
-.scalexIn{
+
+.scalexIn {
     animation-name: scalexIn;
 }
-@keyframes fadeScaleIn{
-    0%{
+
+@keyframes fadeScaleIn {
+    0% {
         opacity: 0;
         transform: scale(.95) translateZ(0.1px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scale(1.00);
     }
 }
-.fadeScaleIn{
+
+.fadeScaleIn {
     animation-name: fadeScaleIn;
 }
-@keyframes scaleOutIn{
-    0%{
-        transform: scale(1.2) translateZ(0.1px);      
+
+@keyframes scaleOutIn {
+    0% {
+        transform: scale(1.2) translateZ(0.1px);
     }
-    to{
+
+    to {
         transform: scale(1.0);
     }
 }
-.scaleOutIn{
+
+.scaleOutIn {
     animation-name: scaleOutIn;
     animation-timing-function: var(--ease-out-short);
 }
-@keyframes fadeScaleOutIn{
-    0%{
+
+@keyframes fadeScaleOutIn {
+    0% {
         opacity: 0;
-        transform: translateY(10px) translateZ(0.1px) scale(1.1);      
+        transform: translateY(10px) translateZ(0.1px) scale(1.1);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scale(1);
     }
 }
-.fadeScaleOutIn{
+
+.fadeScaleOutIn {
     animation-name: fadeScaleOutIn;
 }
-@keyframes clipRightIn{
-	0% {
-		clip-path: inset(0 100% 0 0);
-	}
 
-	to {
-		clip-path: inset(0);
-	}
+@keyframes clipRightIn {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0);
+    }
 }
-.clipRightIn{
-	animation-name: clipRightIn;
+
+.clipRightIn {
+    animation-name: clipRightIn;
     animation-timing-function: var(--ease-out-medium);
 }
-@keyframes fadeRotateIn{
-    0%{
+
+@keyframes fadeRotateIn {
+    0% {
         opacity: 0;
         transform: rotateX(60deg) rotateY(10deg) rotateZ(-10deg);
         transform-origin: top;
-        animation-timing-function: var(--ease-out-short);        
+        animation-timing-function: var(--ease-out-short);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: none;
     }
 }
-.fadeRotateIn{
-    animation-name: fadeRotateIn;  
-}
 
+.fadeRotateIn {
+    animation-name: fadeRotateIn;
+}
 
 /* ==============================
    Classic menu bar

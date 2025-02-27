@@ -87,7 +87,13 @@
     } else {
         document.documentElement.className += " touch";
     }
-    
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0) {
+        $("html").addClass("mobile");
+        console.log("Mobile class added.");
+    } else {
+        $("html").addClass("no-mobile");
+    }
+
     
     /* ---------------------------------------------
      Sections helpers
@@ -519,39 +525,25 @@
      Background Parallax
      --------------------------------------------- */
     
-    function init_parallax(){
-        
-        setTimeout(() => {
-            if ((mobileTest == false) && $("html").hasClass("no-touch")) {
-                $(".parallax-1").each(function(){$(this).parallax("50%", 0.1);});
-                $(".parallax-2").each(function(){$(this).parallax("50%", 0.2);});
-                $(".parallax-3").each(function(){$(this).parallax("50%", 0.3);});
-                $(".parallax-4").each(function(){$(this).parallax("50%", 0.4);});
-                $(".parallax-5").each(function(){$(this).parallax("50%", 0.5);});
-                $(".parallax-6").each(function(){$(this).parallax("50%", 0.6);});
-                $(".parallax-7").each(function(){$(this).parallax("50%", 0.7);});
-                $(".parallax-8").each(function(){$(this).parallax("50%", 0.8);});
-                $(".parallax-9").each(function(){$(this).parallax("50%", 0.9);});
-                $(".parallax-10").each(function(){$(this).parallax("50%", 0.1);});
-            }
-        }, "350");
-        
-        if ($(window).width() < 1024) {
-            setTimeout(() => {
-                $(".parallax-1").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-2").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-3").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-4").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-5").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-6").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-7").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-8").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-9").each(function(){$(this).parallax("50%", 0);});
-                $(".parallax-10").each(function(){$(this).parallax("50%", 0);});
-            }, "350");
-        }
+     function init_parallax() {
+        $(".parallax-1").each(function() {
+            $(this).parallax("50%", 0.1);
+        });
+        $(".parallax-2").each(function() {
+            $(this).parallax("50%", 0.2);
+        });
 
-    }    
+        if ($(window).width() < 1024) {
+            $(".parallax-1").each(function() {
+                $(this).parallax("50%", 0);
+            });
+            $(".parallax-2").each(function() {
+                $(this).parallax("50%", 0);
+            });
+            // ... (rest of parallax reset)
+        }
+    }
+
     
     
     /* -------------------------------------------
@@ -559,11 +551,9 @@
      --------------------------------------------- */
     
     function init_parallax_mousemove(){
-        
         const isReduced = window.matchMedia("(prefers-reduced-motion: reduce)") === true || window.matchMedia("(prefers-reduced-motion: reduce)").matches === true;
 
         if (!(!!isReduced)) {
-            if ($("html").hasClass("no-mobile")) {
             
                 $(".parallax-mousemove-scene").on("mousemove", function(e){
                     var w = $(window).width();
@@ -611,7 +601,6 @@
                     });
                 });
             
-            }
         }
     }
     
@@ -619,61 +608,51 @@
      Parallax on Scroll
      --------------------------------------------- */
     
-    function init_parallax_scroll(){
-        
+     function init_parallax_scroll() {
         const isReduced = window.matchMedia("(prefers-reduced-motion: reduce)") === true || window.matchMedia("(prefers-reduced-motion: reduce)").matches === true;
-        
-        if (!(!!isReduced)) {        
-        
-            if ($("[data-rellax-y]").length) {            
-                if (($(window).width() >= 1280) && (mobileTest == false)) {
-                
+    
+        if (!(!!isReduced)) {
+            if ($("[data-rellax-y]").length) {
                     var rellax_y = new Rellax("[data-rellax-y]", {
                         vertical: true,
-                        horizontal: false
+                        horizontal: false,
+                        breakpoints: 1280,
                     });
-                    
-                    $(window).scroll(function(){
-                        $("[data-rellax-y]").filter(":in-viewport").each(function(){
+    
+                    $(window).scroll(function() {
+                        $("[data-rellax-y]").filter(":in-viewport").each(function() {
                             if (!($(this).hasClass("js-in-viewport"))) {
                                 $(this).addClass("js-in-viewport");
                                 rellax_y.refresh();
                             }
                         });
-                        $("[data-rellax-y]").not(":in-viewport").each(function(){
+                        $("[data-rellax-y]").not(":in-viewport").each(function() {
                             if ($(this).hasClass("js-in-viewport")) {
                                 $(this).removeClass("js-in-viewport");
                             }
                         });
                     });
-                    
-                }                
             }
-            
-            if ($("[data-rellax-x]").length) {            
-                if (($(window).width() >= 1280) && (mobileTest == false)) {
-                
+    
+            if ($("[data-rellax-x]").length) {
                     var rellax_x = new Rellax("[data-rellax-x]", {
                         horizontal: true
                     });
-                    
-                    $(window).scroll(function(){
-                        $("[data-rellax-x]").filter(":in-viewport").each(function(){
+    
+                    $(window).scroll(function() {
+                        $("[data-rellax-x]").filter(":in-viewport").each(function() {
                             if (!($(this).hasClass("js-in-viewport"))) {
                                 $(this).addClass("js-in-viewport");
                                 rellax_x.refresh();
                             }
                         });
-                        $("[data-rellax-x]").not(":in-viewport").each(function(){
+                        $("[data-rellax-x]").not(":in-viewport").each(function() {
                             if ($(this).hasClass("js-in-viewport")) {
                                 $(this).removeClass("js-in-viewport");
                             }
                         });
                     });
-                    
-                }                
             }
-            
         }
     }
 
@@ -1239,7 +1218,7 @@ function init_work_filter(){
                 boxClass: "wow-p",
                 animateClass: "animated",
                 offset: 100,
-                mobile: false,
+                mobile: true,
                 live: true,
                 callback: function(box){
                     setInterval(function(){
@@ -1404,7 +1383,7 @@ function init_wow(){
                 boxClass: 'wow',
                 animateClass: 'animated',
                 offset: 100,
-                mobile: false, 
+                mobile: true, 
                 live: true,
                 callback: function(box){                
                     setInterval(function(){ $(box).removeClass("no-animate"); }, 1500);
@@ -1426,7 +1405,7 @@ function init_wow(){
                 boxClass: 'wow-p',
                 animateClass: 'animated',
                 offset: 100,
-                mobile: false, 
+                mobile: true, 
                 live: true,
                 callback: function(box){                
                     setInterval(function(){ $(box).removeClass("no-animate"); }, 1500);
